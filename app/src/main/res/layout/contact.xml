@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@android:color/white"
+    android:layout_height="wrap_content"
+    android:id="@+id/card"
+    app:cardElevation="0dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_margin="4dp"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="50dp"
+            android:layout_weight="10"
+            android:id="@+id/profilepic"
+            app:civ_border_color="@android:color/black"
+            app:civ_border_width="1dp"
+            android:src="@drawable/profile"
+            android:layout_height="50dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="70"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="Create new Group"
+            android:textStyle="bold"
+            android:id="@+id/name"
+            android:textColor="@color/text"
+            android:textSize="16dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:text="Create new Group"
+                android:id="@+id/number"
+                android:textColor="@color/text"
+                android:textSize="16dp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

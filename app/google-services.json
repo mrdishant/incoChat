@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "57573468379",
+    "firebase_url": "https://incochat-49bbb.firebaseio.com",
+    "project_id": "incochat-49bbb",
+    "storage_bucket": "incochat-49bbb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57573468379:android:d2ac345b66061bb8",
+        "android_client_info": {
+          "package_name": "com.incochat.incochat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57573468379-f99c52u9ads8jgeb6h2efn30j7ju5p46.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.incochat.incochat",
+            "certificate_hash": "6f0ee1f85c577659e96581ced0fd2cf2c1e8c59b"
+          }
+        },
+        {
+          "client_id": "57573468379-2tdmaib4i9gih22n21ndnl3tv19puqf2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZAWHep-dlC3IRdyLyHu7DvAQb-x7vRSI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "57573468379-2tdmaib4i9gih22n21ndnl3tv19puqf2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

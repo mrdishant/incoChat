@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.incochat.incochat.Activities.ImageActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:id="@+id/toolbar"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/backarrow" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileimage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:civ_border_width="1dp"
+            app:civ_border_color="@android:color/white"
+            android:layout_gravity="center"
+            android:src="@drawable/profile"
+            android:translationZ="5dp" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="45"
+            >
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="20"
+                android:layout_weight="45"
+                android:text="Name"
+                android:textColor="@android:color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/anonimityTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="20"
+                android:layout_weight="45"
+                android:text="Message Anonymously"
+                android:textColor="@android:color/white"
+                android:textSize="14dp"
+                />
+
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center|right"
+            android:text="Off"
+            android:id="@+id/anonimity"
+            android:layout_marginRight="10dp"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:drawableTop="@drawable/off"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+
+
+    <com.jsibbold.zoomage.ZoomageView
+        android:id="@+id/imageloaded"
+        android:layout_width="match_parent"
+        android:fitsSystemWindows="false"
+        android:layout_marginTop="55dp"
+        android:src="@android:color/black"
+        android:layout_height="match_parent"
+        app:zoomage_restrictBounds="true"
+        app:zoomage_animateOnReset="true"
+        app:zoomage_autoResetMode="UNDER"
+        app:zoomage_autoCenter="true"
+        app:zoomage_zoomable="true"
+        app:zoomage_translatable="true"
+        app:zoomage_minScale="0.6"
+        app:zoomage_maxScale="8"
+        />
+
+
+
+    <LinearLayout
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        android:id="@+id/sendmessage"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/sendback">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/send" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
