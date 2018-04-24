@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     FirebaseUser user;
     User u;
     boolean newuser = true;
-    String profileurl;
+    String profileurl=null;
 
 
     @Override
@@ -304,11 +304,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 u.setName(name.getText().toString());
                 u.setPhonenumber(user.getPhoneNumber());
                 u.setToken(FirebaseInstanceId.getInstance().getToken());
-                if (profileurl == null) {
-                    u.setProfileurl("");
-                } else {
-                    u.setProfileurl(profileurl);
-                }
+                u.setProfileurl(profileurl);
                 FirebaseFirestore.getInstance().collection("Users").document(u.getPhonenumber())
                         .set(u).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -329,12 +325,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             } else {
                 u.setToken(FirebaseInstanceId.getInstance().getToken());
                 u.setName(name.getText().toString());
-                if (profileurl == null) {
-                    u.setProfileurl( "");
-                } else {
-                    u.setProfileurl(profileurl
-                    );
-                }
+                u.setProfileurl(profileurl);
                 FirebaseFirestore.getInstance().collection("Users").document(u.getPhonenumber())
                         .set(u).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -451,6 +442,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             if (resultCode == Activity.RESULT_OK) {
                 if (data != null && data.getData() != null) {
                     DialogLoading.show(LoginActivity.this);
+                    DialogLoading.dialog.setCancelable(false);
                     Picasso.get().load(data.getData()).fit().centerCrop().into(hiimage);
                     upload(data.getData());
                 }

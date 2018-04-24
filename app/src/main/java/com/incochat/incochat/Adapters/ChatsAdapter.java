@@ -56,7 +56,7 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.MyChats> {
                     @Override
                     public void onEvent(DocumentSnapshot documentSnapshot, FirebaseFirestoreException e) {
                         if (documentSnapshot != null && documentSnapshot.exists()) {
-                            User user = documentSnapshot.toObject(User.class);
+                            final User user = documentSnapshot.toObject(User.class);
 
                             if (arrayList.get(position).isAnonymous()) {
                                 holder.name.setText("Anonymous");
@@ -72,24 +72,26 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.MyChats> {
                                     profileUrls.add(null);
                                 }
                             }
+
+                            holder.cardView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(context, ChatActivity.class);
+                                    intent.putExtra("phonenumber", arrayList.get(position).getSender());
+                                    intent.putExtra("name", holder.name.getText().toString());
+                                    if(!arrayList.get(position).isAnonymous()){
+                                        intent.putExtra("profileurl", user.getProfileurl());
+                                    }
+                                    context.startActivity(intent);
+                                }
+                            });
+
                         }
                     }
                 });
 
         holder.number.setText(arrayList.get(position).getLastTxt());
 
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, ChatActivity.class);
-                intent.putExtra("phonenumber", arrayList.get(position).getSender());
-                intent.putExtra("name", holder.name.getText().toString());
-                if(!arrayList.get(position).isAnonymous()){
-                    intent.putExtra("profileurl", profileUrls.get(position));
-                }
-                context.startActivity(intent);
-            }
-        });
 
         holder.cardView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override

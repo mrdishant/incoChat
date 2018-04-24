@@ -18,10 +18,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
+            android:layout_marginTop="10dp"
             android:layout_height="match_parent">
 
 
-            <android.support.v7.widget.CardView
+            <!--<android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 app:cardBackgroundColor="@android:color/white"
                 android:layout_height="wrap_content">
@@ -41,10 +42,293 @@
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>
+-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="70dp"
+                app:civ_border_color="@android:color/white"
+                app:civ_border_width="1dp"
+                android:layout_gravity="center"
+                android:id="@+id/profileimage"
+                android:src="@drawable/profile"
+                android:layout_height="70dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:id="@+id/name"
+                    android:textColor="@android:color/black"
+                    android:textSize="20dp"
+                    android:text="Dishant Mahajan"
+                    android:layout_height="wrap_content" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:id="@+id/phone"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                    android:text="+919023074222"
+                    android:layout_height="wrap_content" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="40"
+                        android:text="Privacy"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15dp"
+                        android:layout_height="wrap_content" />
+
+
+                    <Switch
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/switchPrivacy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
 
 
 
-            </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:background="#D3D3D3"
+                android:layout_height="1sp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:padding="15dp"
+                android:id="@+id/account"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/account"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:text="Account"
+                    android:textSize="16dp"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:background="#D3D3D3"
+                android:layout_marginLeft="70dp"
+                android:layout_height="1sp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:padding="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/sgroup"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:text="Subscribe Groups"
+                    android:textSize="16dp"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:background="#D3D3D3"
+                android:layout_marginLeft="70dp"
+                android:layout_height="1sp"/>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:padding="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_chat"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:text="Chats"
+                    android:textSize="16dp"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:background="#D3D3D3"
+                android:layout_marginLeft="70dp"
+                android:layout_height="1sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:padding="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/notifications"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:text="Notifications"
+                    android:textSize="16dp"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:background="#D3D3D3"
+                android:layout_marginLeft="70dp"
+                android:layout_height="1sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:padding="15dp"
+                android:id="@+id/invite"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_add_user_symbol"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:text="Invite a friend"
+                    android:textSize="16dp"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:background="#D3D3D3"
+                android:layout_marginLeft="70dp"
+                android:layout_height="1sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:padding="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/help"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:text="Help"
+                    android:textSize="16dp"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:background="#D3D3D3"
+                android:layout_marginLeft="70dp"
+                android:layout_height="1sp"/>
+
 
 
 

@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">Incochat</string>
+    <string name="app_name">incoChat</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="invitation_title">Innitation Title</string>
+    <string name="invitation_message">Invittion Message</string>
+    <string name="invitation_deep_link">Invitation Deep Link</string>
+    <string name="invitation_custom_image">https://commons.wikimedia.org/wiki/File:Google_%22G%22_Logo.svg</string>
 </resources>

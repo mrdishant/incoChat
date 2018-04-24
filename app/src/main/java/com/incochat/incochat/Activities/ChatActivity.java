@@ -55,6 +55,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     SharedPreferences.Editor editor;
     String recieverPhone1,recieverPhone2,recievername,recieverProfileUrl;
     TextView anonimity;
+    ImageView delete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,8 +66,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
 
         anonimity=findViewById(R.id.anonimity);
         anonimityTxt=findViewById(R.id.anonimityTxt);
-
-
+        delete=findViewById(R.id.delete);
         recieverPhone1=getIntent().getStringExtra("phonenumber");
         recieverPhone2=recieverPhone1+"-Anonymous";
         Log.i("reciever1",recieverPhone1);
@@ -144,11 +144,14 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
 
         messages=new ArrayList<>();
         messagesAdapter=new MessagesAdapter(messages,getApplicationContext());
+        messagesAdapter.setDeleteButton(delete);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(messagesAdapter);
 
         initmessages();
+
+        delete.setOnClickListener(this);
 
         anonimity.setOnClickListener(this);
         back.setOnClickListener(this);
@@ -162,6 +165,8 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
         if(recievername.equals("Anonymous")){
             DocumentReference  documentReference=FirebaseFirestore.getInstance().collection("Users").document(user.getPhoneNumber())
                     .collection("Chats").document(recieverPhone2);
+
+            messagesAdapter.setDeleteChatId(recieverPhone2);
 
             documentReference.collection("messages")
                     .addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -187,6 +192,8 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
         }else{
             DocumentReference  documentReference=FirebaseFirestore.getInstance().collection("Users").document(user.getPhoneNumber())
                     .collection("Chats").document(recieverPhone1);
+
+            messagesAdapter.setDeleteChatId(recieverPhone1);
 
             documentReference.collection("messages")
                     .addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -309,6 +316,11 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
+        }if(view==delete){
+            Toast.makeText(getApplicationContext(),"Delete error",Toast.LENGTH_LONG).show();
+
+            messagesAdapter.delete();
+
         }
 
 
@@ -332,4 +344,6 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
     }
+
+
 }

@@ -1,5 +1,6 @@
 package com.incochat.incochat.Adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
@@ -12,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.incochat.incochat.Activities.ChatActivity;
 import com.incochat.incochat.Activities.ImageActivity;
 import com.incochat.incochat.R;
@@ -28,10 +31,43 @@ import java.util.ArrayList;
 public class MessagesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     ArrayList<Message> messages;
+    public ArrayList<String> delete;
+    ImageView deleteButton;
     Context context;
+    String deleteChatId;
+    boolean deleteEnabled=false;
+
+    public void setDeleteChatId(String deleteChatId) {
+        this.deleteChatId = deleteChatId;
+    }
+
+    public void setDeleteButton(ImageView deleteButton) {
+        this.deleteButton = deleteButton;
+
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Toast.makeText(context,"Delete Clicked",Toast.LENGTH_LONG).show();
+
+                if(deleteChatId==null|| deleteChatId.equals("")){
+                    Toast.makeText(context,"Chat error",Toast.LENGTH_LONG).show();
+                }
+
+                for(String id:delete){
+                    FirebaseFirestore.getInstance().collection("Users").document(FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber())
+                            .collection("Chats").document()
+                            .collection("messages").document(id)
+                            .delete();
+                }
+            }
+        });
+
+    }
 
     public MessagesAdapter(ArrayList<Message> messages, Context context) {
         this.messages = messages;
+        delete=new ArrayList<>();
         this.context = context;
     }
 
@@ -48,15 +84,28 @@ public class MessagesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
 
         if(messages.get(position).isUsersent()){
             ((SentMessage)holder).bind(messages.get(position));
             ((SentMessage) holder).cardView2.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {
-                    Toast.makeText(context,"Available soon",Toast.LENGTH_LONG).show();
+                    delete.add(messages.get(position).getId());
+                    ((SentMessage) holder).cardView2.setAlpha(0.5f);
+                    deleteButton.setVisibility(View.VISIBLE);
+                    deleteEnabled=true;
                     return true;
+                }
+            });
+
+            ((SentMessage) holder).cardView2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(deleteEnabled){
+                        delete.add(messages.get(position).getId());
+                        ((SentMessage) holder).cardView2.setAlpha(0.5f);
+                    }
                 }
             });
 
@@ -76,10 +125,24 @@ public class MessagesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             ((RecievedMessage) holder).cardView1.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {
-                    Toast.makeText(context,"Available soon1",Toast.LENGTH_LONG).show();
+                    delete.add(messages.get(position).getId());
+                    ((RecievedMessage) holder).cardView1.setAlpha(0.5f);
+                    deleteButton.setVisibility(View.VISIBLE);
+                    deleteEnabled=true;
                     return true;
                 }
             });
+
+            ((RecievedMessage) holder).cardView1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(deleteEnabled){
+                        delete.add(messages.get(position).getId());
+                        ((RecievedMessage) holder).cardView1.setAlpha(0.5f);
+                    }
+                }
+            });
+
             ((RecievedMessage) holder).imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -168,6 +231,20 @@ public class MessagesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             time1.setText(message.getTime());
         }
 
+    }
+
+
+    public void delete(){
+        if(deleteChatId==null|| deleteChatId.equals("")){
+            Toast.makeText(context,"Chat error",Toast.LENGTH_LONG).show();
+        }
+
+        for(String id:delete){
+            FirebaseFirestore.getInstance().collection("Users").document(FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber())
+                    .collection("Chats").document()
+                    .collection("messages").document(id)
+                    .delete();
+        }
     }
 
 
