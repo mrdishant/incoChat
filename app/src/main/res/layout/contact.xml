@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:id="@+id/card"
     app:cardElevation="0dp"
+    android:layout_marginBottom="1dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
@@ -31,7 +32,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:text="Create new Group"
+            android:text=""
             android:textStyle="bold"
             android:id="@+id/name"
             android:textColor="@color/text"
@@ -41,7 +42,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:text="Create new Group"
+                android:text=""
                 android:id="@+id/number"
                 android:textColor="@color/text"
                 android:textSize="16dp"
@@ -53,7 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:background="@android:color/white"/>
 
         </LinearLayout>
 

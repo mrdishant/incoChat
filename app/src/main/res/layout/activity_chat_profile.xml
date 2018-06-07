@@ -19,73 +19,38 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="150dp"
         app:civ_border_width="1dp"
-        app:civ_border_color="@android:color/white"
-        android:src="@drawable/profilepic"
+        app:civ_border_color="@android:color/black"
+        android:src="@drawable/profile"
         android:id="@+id/profilepic"
         android:layout_gravity="center"
         android:layout_marginTop="70dp"
         android:layout_height="150dp" />
 
 
+
     <TextView
         android:layout_width="match_parent"
-        android:textAlignment="center"
         android:padding="10dp"
-        android:text="Click to change Profile Pic"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/white"
+        android:text="Username"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18dp"
         android:layout_height="wrap_content" />
-
 
 
     <TextView
         android:layout_width="match_parent"
         android:id="@+id/name"
         android:padding="15dp"
-        android:layout_marginTop="30dp"
         android:background="@android:color/white"
         android:text="Dishant Mahajan"
-        android:drawableRight="@drawable/edit"
         android:textColor="@android:color/black"
         android:textSize="20dp"
         android:layout_height="wrap_content" />
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:padding="15dp"
-        android:visibility="gone"
-        android:id="@+id/editLayout"
-        android:background="@android:color/white"
-        android:layout_height="wrap_content">
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:layout_width="0dp"
-            android:layout_weight="70"
-            android:id="@+id/nameEdit"
-            app:met_hideUnderline="true"
-            android:hint="Username"
-            app:met_floatingLabelText="Username"
-            app:met_floatingLabel="highlight"
-            android:layout_height="wrap_content" />
-
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_gravity="center"
-            android:id="@+id/updatename"
-            android:src="@drawable/ic_tick"
-            android:layout_height="32dp" />
-
-
-    </LinearLayout>
-
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:textAlignment="center"
-        android:padding="10dp"
-        android:text="This name will be visible to your incoChat contacts"
-        android:layout_height="wrap_content" />
 
 
 

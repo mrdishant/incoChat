@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Activities.Help">
+
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        app:navigationIcon="@drawable/backarrow"
+        app:title="Help"
+        android:id="@+id/toolbar"
+        app:titleTextColor="@android:color/white"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="#D3D3D3"
+        android:layout_marginLeft="52dp"
+        android:layout_height="1sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        android:id="@+id/contact"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="20dp"
+
+            android:layout_gravity="center"
+            android:src="@drawable/contact"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:text="Contact us (Questions? Need Help?)"
+            android:textSize="16dp"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:background="#D3D3D3"
+        android:layout_marginLeft="52dp"
+        android:layout_height="1sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        android:id="@+id/terms"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="20dp"
+
+            android:layout_gravity="center"
+            android:src="@drawable/policy"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:text="Terms and privacy policy"
+            android:textSize="16dp"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:background="#D3D3D3"
+            android:layout_marginLeft="52dp"
+            android:layout_height="1sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:id="@+id/appinfo"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="20dp"
+
+                android:layout_gravity="center"
+                android:src="@drawable/info"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginLeft="15dp"
+                android:text="App info"
+                android:textSize="16dp"
+                android:textColor="@android:color/black"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+</LinearLayout>

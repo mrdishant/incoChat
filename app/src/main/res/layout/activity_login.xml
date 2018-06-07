@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/wallpaper"
     android:orientation="vertical"
-    tools:context="com.incochat.incochat.Activities.LoginActivity">
+    tools:context="com.incochat.incochat1.Activities.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

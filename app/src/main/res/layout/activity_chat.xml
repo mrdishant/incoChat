@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/chatbkg"
-    tools:context="com.incochat.incochat.Activities.ChatActivity">
+    tools:context="com.incochat.incochat1.Activities.ChatActivity">
 
 
 
@@ -30,8 +30,10 @@
                 android:id="@+id/profileimage"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:background="@drawable/backpic"
                 app:civ_border_width="1dp"
-                app:civ_border_color="@android:color/white"
+                android:onClick="profileopen"
+                app:civ_border_color="@android:color/black"
                 android:layout_gravity="center"
                 android:src="@drawable/profile"
                 android:translationZ="5dp" />
@@ -41,6 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
+                android:onClick="profileopen"
                 android:layout_gravity="center"
                 android:orientation="vertical"
                 android:layout_weight="45"
@@ -73,13 +76,13 @@
 
 
             <ImageView
-                android:layout_width="32dp"
+                android:layout_width="24dp"
                 android:layout_gravity="center|right"
                 android:id="@+id/delete"
                 android:visibility="gone"
                 android:layout_marginRight="20dp"
                 android:src="@drawable/delete"
-                android:layout_height="32dp" />
+                android:layout_height="24dp" />
 
 
 
